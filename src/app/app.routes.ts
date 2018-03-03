@@ -2,11 +2,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 // Componentes
-import { EvaluacionComponent } from './app/components/evaluacion/evaluacion.component';
-import { PerfilComponent } from './app/components/perfil/perfil.component';
-import { TrabajadoresComponent } from './app/components/trabajadores/trabajadores.component';
-import { TrabajadorComponent } from './app/components/trabajador/trabajador.component';
-import { AltaTrabajadorComponent } from './app/components/altatrabajador/altatrabajador.component';
+import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { TrabajadoresComponent } from './components/trabajadores/trabajadores.component';
+import { TrabajadorComponent } from './components/trabajador/trabajador.component';
+import { AltaTrabajadorComponent } from './components/altatrabajador/altatrabajador.component';
 
 const APP_ROUTES: Routes = [
     { path: 'trabajadores', component: TrabajadoresComponent },

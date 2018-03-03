@@ -8,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrabajadoresComponent implements OnInit {
 
+  cargando: boolean = true;
   constructor(private trabajadorService: TrabajadorService) {
-    this.trabajadorService.cargarTrabajadores().subscribe(); // No devuelve nada
-   }
+    this.trabajadorService.cargarTrabajadores().subscribe( data=> {
+      this.cargando = false;
+    });
+
+    this.trabajadorService.cargarEvaluaciones().subscribe( data=> {
+      
+    });
+    
+  }
 
   ngOnInit() {
   }

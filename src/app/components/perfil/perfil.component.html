@@ -1,3 +1,74 @@
-<p>
-  perfil works!
-</p>
+<h2>
+  <strong>{{ trabajador.nombre}} {{ trabajador.apellidos}}</strong>
+</h2>
+<hr>
+<div class="row">
+  <div class="col-md-4">
+    <img [src]="trabajador.fotoPerfil" class="img-thumbnail img300">
+  </div>
+
+  <div class="col-md-6">
+    <table class="table table-responsive">
+      <tr>
+        <td>
+          Nombre: {{ trabajador.nombre }}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Apellidos: {{ trabajador.apellidos }}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Edad: {{ trabajador.edad }}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Estado Civil: {{ trabajador.estadoCivil }}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Sexo: {{ trabajador.sexo }}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Correo: {{ trabajador.correo }}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Teléfono: {{ trabajador.telefono }}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-md-2">
+    <button type="button" class="btn btn-outline-success btn-block" (click)="evaluar(trabajador.id)">Evaluar</button>
+    <button type="button" class="btn btn-outline-danger btn-block" (click)="volver()">Volver</button>
+  </div>
+
+</div>
+
+<div class="alert alert-danger text-center margenes" role="alert" *ngIf="numEvaluaciones == 0 && !cargando">
+  El trabajador
+  <strong>{{ trabajador.nombre}} {{ trabajador.apellidos}}</strong> todavía no tiene ninguna evaluación
+</div>
+
+<div>
+  <h2>Estadísticas</h2><hr>
+  <div style="display: block" class="margenes" *ngIf="!cargando && numEvaluaciones != 0">
+    <canvas baseChart [datasets]="radarChartData" [labels]="radarChartLabels" [chartType]="radarChartType" (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"></canvas>
+  </div>
+</div>

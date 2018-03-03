@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
 
 // Firebase
 import { AngularFireModule } from 'angularfire2';
@@ -19,10 +20,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AltaTrabajadorComponent } from './components/altatrabajador/altatrabajador.component';
 
 // Rutas
-import { APP_ROUTING } from '../app.routes';
+import { APP_ROUTING } from './app.routes';
 
 // Services
 import { TrabajadorService } from './providers/trabajador.service';
+
+// Pipes
+import { MostrarTrabajadorPipe } from './pipes/mostrar-trabajador.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { TrabajadorService } from './providers/trabajador.service';
     PerfilComponent,
     EvaluacionComponent,
     NavbarComponent,
-    AltaTrabajadorComponent
+    AltaTrabajadorComponent,
+    MostrarTrabajadorPipe
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,7 @@ import { TrabajadorService } from './providers/trabajador.service';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule,
+    ChartsModule,
     APP_ROUTING,
     FormsModule
   ],

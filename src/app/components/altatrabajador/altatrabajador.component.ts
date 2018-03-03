@@ -17,8 +17,8 @@ export class AltaTrabajadorComponent implements OnInit {
     nombre: "",
     apellidos: "",
     edad: null,
-    estadoCivil: "S",
-    sexo: "H",
+    estadoCivil: "Soltero",
+    sexo: "Hombre",
     correo: "",
     telefono: "",
     fotoPerfil: ""
@@ -44,7 +44,7 @@ export class AltaTrabajadorComponent implements OnInit {
 
   uploadFile(event) {
     const file = event.target.files[0];
-    const filePath = file.name;
+    const filePath = file.name + Math.random();
 
     this.imagen.nombre = filePath;
     this.imagen.file = file;

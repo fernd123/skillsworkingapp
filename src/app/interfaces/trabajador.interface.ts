@@ -1,5 +1,5 @@
+import { Capacidad } from './capacidad.interface';
 export interface Trabajador {
-    id?: string;
     nombre: string;
     apellidos: string;
     edad: number;
@@ -8,4 +8,6 @@ export interface Trabajador {
     correo: string;
     telefono: string;
     fotoPerfil: string;
+    id?: string;
+    evaluaciones?: Capacidad[];
 }

@@ -1,3 +1,46 @@
-<p>
-  evaluacion works!
-</p>
+<form (ngSubmit)="evaluar()" #forma="ngForm" novalidate="">
+  <div class="slidecontainer">
+    <h3>Trabajo en Equipo</h3>
+    <input type="range" min="1" max="100" value="50" class="slider" name="trabajoEquipo" [(ngModel)]="capacidad.trabajoEquipo"> {{ capacidad.trabajoEquipo }}
+  </div>
+
+  <div class="slidecontainer">
+    <h3>Capacidad de Análisis</h3>
+    <input type="range" min="1" max="100" value="50" class="slider" name="capacidadAnalisis" [(ngModel)]="capacidad.capacidadAnalisis"> {{ capacidad.capacidadAnalisis }}
+  </div>
+
+  <div class="slidecontainer">
+    <h3>Racionalización</h3>
+    <input type="range" min="1" max="100" value="50" class="slider" name="racionalizacion" [(ngModel)]="capacidad.racionalizacion"> {{ capacidad.racionalizacion }}
+  </div>
+
+  <div class="slidecontainer">
+    <h3>Control Estrés</h3>
+    <input type="range" min="1" max="100" value="50" class="slider" name="controlEstres" [(ngModel)]="capacidad.controlEstres"> {{ capacidad.controlEstres }}
+  </div>
+
+  <div class="slidecontainer">
+    <h3>Liderazgo</h3>
+    <input type="range" min="1" max="100" value="50" class="slider" name="liderazgo" [(ngModel)]="capacidad.liderazgo"> {{ capacidad.liderazgo }}
+  </div>
+
+  <div class="slidecontainer">
+    <h3>Iniciativa</h3>
+    <input type="range" min="1" max="100" value="50" class="slider" name="iniciativa" [(ngModel)]="capacidad.iniciativa"> {{ capacidad.iniciativa }}
+  </div>
+
+  <div class="slidecontainer">
+    <h3>Respeto</h3>
+    <input type="range" min="1" max="100" value="50" class="slider" name="respeto" [(ngModel)]="capacidad.respeto"> {{ capacidad.respeto }}
+  </div>
+
+  <div class="slidecontainer">
+    <h3>Sinceridad</h3>
+    <input type="range" min="1" max="100" value="50" class="slider" name="sinceridad" [(ngModel)]="capacidad.sinceridad"> {{ capacidad.sinceridad }}
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="!forma.valid">Guardar</button>
+  </div>
+
+</form>
