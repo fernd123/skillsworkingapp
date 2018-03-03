@@ -1,3 +1,4 @@
+import { TrabajadorService } from './../../providers/trabajador.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrabajadoresComponent implements OnInit {
 
-  constructor() { }
+  constructor(private trabajadorService: TrabajadorService) {
+    this.trabajadorService.cargarTrabajadores().subscribe(); // No devuelve nada
+   }
 
   ngOnInit() {
   }

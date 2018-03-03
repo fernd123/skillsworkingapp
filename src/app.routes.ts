@@ -6,11 +6,12 @@ import { EvaluacionComponent } from './app/components/evaluacion/evaluacion.comp
 import { PerfilComponent } from './app/components/perfil/perfil.component';
 import { TrabajadoresComponent } from './app/components/trabajadores/trabajadores.component';
 import { TrabajadorComponent } from './app/components/trabajador/trabajador.component';
-
+import { AltaTrabajadorComponent } from './app/components/altatrabajador/altatrabajador.component';
 
 const APP_ROUTES: Routes = [
     { path: 'trabajadores', component: TrabajadoresComponent },
-    { path: 'trabajador', component: TrabajadorComponent },
+    { path: 'trabajador/:id', component: TrabajadorComponent },
+    { path: 'alta', component: AltaTrabajadorComponent },
     { path: 'perfil/:id', component: PerfilComponent },
     { path: 'evaluar/:id', component: EvaluacionComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'trabajadores' }

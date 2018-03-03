@@ -1,0 +1,63 @@
+<h1>Alta Trabajador</h1>
+<hr>
+<form (ngSubmit)="guardarTrabajador()" #forma="ngForm" novalidate="novalidate">
+  <div class="form-group" [ngClass]=" { 'has-danger' : (nombre.errors?.minlength || nombre.errors?.required) && nombre.touched }">
+    <label>Nombre</label>
+    <input type="text" class="form-control" placeholder="Nombre" name="nombre" #nombre="ngModel" [(ngModel)]="trabajador.nombre"
+      required minlength="1" [ngClass]="{ 'form-control-danger': (nombre.errors?.minlength || nombre.errors?.required) && nombre.touched  }">
+  </div>
+
+  <div class="form-group" [ngClass]=" { 'has-danger' : (apellidos.errors?.minlength || apellidos.errors?.required) && apellidos.touched }">
+    <label>Apellidos</label>
+    <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" #apellidos="ngModel" [(ngModel)]="trabajador.apellidos"
+      required minlength="1" [ngClass]="{ 'form-control-danger': (apellidos.errors?.minlength || apellidos.errors?.required) && apellidos.touched  }">
+  </div>
+
+  <div class="form-group" [ngClass]=" { 'has-danger' : edad.errors?.required && edad.touched }">
+    <label>Edad</label>
+    <input type="number" class="form-control" placeholder="Edad" name="edad" #edad="ngModel" [(ngModel)]="trabajador.edad" required
+      [ngClass]=" { 'form-control-danger' : edad.errors?.required && edad.touched }">
+  </div>
+
+  <div class="form-group" [ngClass]=" { 'has-danger' : estadoCivil.errors?.required && estadoCivil.touched }">
+    <label>Estado Civil</label>
+    <select class="form-control" name="estadoCivil" #estadoCivil="ngModel" [(ngModel)]="trabajador.estadoCivil" required [ngClass]=" { 'form-control-danger' : estadoCivil.errors?.required && estadoCivil.touched }">
+      <option value="S">Soltero</option>
+      <option value="C">Casado</option>
+    </select>
+  </div>
+
+  <p>Sexo</p>
+  <div class="form-check form-check-inline">
+    <label class="form-check-label">
+      <input class="form-check-input" type="radio" name="hombre" value="H" [(ngModel)]="trabajador.sexo"> Hombre
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <label class="form-check-label">
+      <input class="form-check-input" type="radio" name="mujer" value="M" [(ngModel)]="trabajador.sexo"> Mujer
+    </label>
+  </div>
+
+  <div class="form-group" [ngClass]=" { 'has-danger' : correo.errors?.required && correo.touched }">
+    <label>Correo</label>
+    <input type="email" class="form-control" placeholder="Correo electrónico" name="correo" #correo="ngModel" [(ngModel)]="trabajador.correo"
+      required [ngClass]="{ 'form-control-danger': correo.errors?.required && correo.touched  }">
+  </div>
+
+  <div class="form-group" [ngClass]=" { 'has-danger' : telefono.errors?.required && telefono.touched }">
+    <label>Apellidos</label>
+    <input type="text" class="form-control" placeholder="Telefono" name="telefono" #telefono="ngModel" [(ngModel)]="trabajador.telefono"
+      required minlength="1" [ngClass]="{ 'form-control-danger': telefono.errors?.required && telefono.touched  }">
+  </div>
+
+  <div class="form-group">
+    <label>Foto de perfil</label>
+    <input type="file" class="form-control" name="foto" [(ngModel)]="trabajador.fotoPerfil" (change)="uploadFile($event)">
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="!forma.valid">Guardar</button>
+  </div>
+
+</form>
